@@ -1,0 +1,16 @@
+{
+	"name": "tool",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"foo": "bin/foo",
+		"foo2": "bin/foo2"
+	},
+	"keywords": [],
+	"author": "shuwang",
+	"license": "MIT"
+}
