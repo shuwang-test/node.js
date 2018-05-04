@@ -1,0 +1,23 @@
+{
+  "name": "node.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://study5456:sw1260593926@github.com/study5456/node.js.git"
+  },
+  "keywords": [],
+  "author": "shuwang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/study5456/node.js/issues"
+  },
+  "homepage": "https://github.com/study5456/node.js#readme",
+  "dependencies": {
+    "jsdom": "^11.10.0"
+  }
+}
