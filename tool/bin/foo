@@ -1,8 +1,38 @@
 #!/usr/bin/env node
-var argv = process.argv
-var filePath = __dirname
-var currentPath = process.cwd()
-
-console.log(argv[2])
-console.log(filePath)
-console.log(currentPath)
+const path = require('path')
+const fs = require('fs')
+const argv = process.argv
+const filePath = __dirname
+const currentPath = process.cwd()
+const title = path.basename(currentPath)
+const { JSDOM } = require('jsdom')
+let sourceDir = path.resolve(filePath, '..', 'template')
+fs.readdir(sourceDir, (error, fileList) => {
+	if (error) {
+		console.log(error)
+	} else {
+		fileList.forEach((file, index) => {
+			let sourceFile = path.resolve(sourceDir, file)
+			let dest = path.resolve(currentPath, file)
+			if (/\.html$/.test(file)) {
+				fs.readFile(sourceFile, 'utf-8', (error, data) => {
+					if (error) {
+						console.log(error)
+					} else {
+						let dom = new JSDOM(data)
+						dom.window.document.title = title
+						fs.writeFile(dest, dom.serialize(), error => {
+							if (error) {
+								console.log(error)
+							}
+						})
+					}
+				})
+			} else {
+				let readStream = fs.createReadStream(sourceFile)
+				let writeStream = fs.createWriteStream(dest)
+				readStream.pipe(writeStream)
+			}
+		})
+	}
+})
