@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/study5456/node.js#readme",
   "dependencies": {
-    "jsdom": "^11.10.0"
+    "cross-env": "^5.1.4",
+    "jsdom": "^11.10.0",
+    "opn": "^5.3.0"
   }
 }

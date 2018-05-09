@@ -1,0 +1,15 @@
+{
+	"name": "1",
+	"version": "1.0.0",
+	"description": "",
+	"main": "1.js",
+	"scripts": {
+		"test": "cross-env NODE_ENV=development node 1"
+	},
+	"keywords": [],
+	"author": "shuwang",
+	"license": "MIT",
+	"dependencies": {
+		"cross-env": "^5.1.4"
+	}
+}
